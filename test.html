@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="library/jquery.min.js"></script>
+    <script src="src/jquery.imageFlip.js"></script>
+    <script>
+        $(window).ready(function(){
+            $(".canvasFlipVertical").imageFlip({
+                horizontalFlip: true,
+                verticalFlip: false,
+                canvas: true
+            });
+            $(".canvasFlipHorizontal").imageFlip({
+                horizontalFlip: false,
+                verticalFlip: true,
+                canvas: true
+            });
+            $(".cssFlipVertical").imageFlip({
+                horizontalFlip: false,
+                verticalFlip: true,
+                canvas: false
+            });
+            $(".cssFlipHorizontal").imageFlip({
+                horizontalFlip: true,
+                verticalFlip: false,
+                canvas: false
+            });
+        });
+    </script>
+    <style>
+        #wrapper{
+            margin:0px auto;
+            width:840px;
+        }
+        .left{
+            float:left;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="left">
+            Original Image: <br/>
+            <img src="images/image5.jpg" class="" />
+        </div>
+
+
+        <div class="left">
+            Canvas Image: Vertical <br/>
+            <img src="images/image5.jpg" class="canvasFlipVertical" />
+
+        </div>
+
+        <div class="left">
+            Canvas Image: Horizontal <br/>
+            <img src="images/image5.jpg" class="canvasFlipHorizontal" />
+        </div>
+
+        <div class="left">
+            CSS Image: Horizontal <br/>
+            <img src="images/image5.jpg" class="cssFlipHorizontal" />
+        </div>
+
+        <div class="left">
+            CSS Image: Vertical <br/>
+            <img src="images/image5.jpg" class="cssFlipVertical" />
+        </div>
+    </div>
+</body>
+</html>
