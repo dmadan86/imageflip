@@ -1,0 +1,11 @@
+{
+    "name": "ImageFlip",
+    "version": "0.0.1",
+    "author": "Madan",
+    "license": "BSD",
+    "devDependencies": {
+        "grunt": "latest",
+        "grunt-contrib-uglify": "latest",
+        "grunt-contrib-clean": "latest"
+}
+}
