@@ -7,12 +7,17 @@
     <script>
         $(window).ready(function(){
             $(".canvasFlipVertical").imageFlip({
+                horizontalFlip: false,
+                verticalFlip: true,
+                canvas: true
+            });
+            $(".canvasFlipHorizontal").imageFlip({
                 horizontalFlip: true,
                 verticalFlip: false,
                 canvas: true
             });
-            $(".canvasFlipHorizontal").imageFlip({
-                horizontalFlip: false,
+            $(".canvasFlipVerticalHorizontal").imageFlip({
+                horizontalFlip: true,
                 verticalFlip: true,
                 canvas: true
             });
@@ -26,30 +31,52 @@
                 verticalFlip: false,
                 canvas: false
             });
+            $(".cssFlipVerticalHorizontal").imageFlip({
+                horizontalFlip: true,
+                verticalFlip: true,
+                canvas: false
+            });
+
         });
     </script>
     <style>
+        body{
+            background-color: #c4c4c4;
+            color:rgb(48, 38, 38);
+        }
         #wrapper{
             margin:0px auto;
-            width:840px;
+
+            text-align: center;
         }
         .left{
             float:left;
+            margin-right:10px;
+            height:300px;
+        }
+        .left > img, .left canvas{
+            border: 1px solid black;
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
     </style>
 </head>
 <body>
     <div id="wrapper">
+        <div>
+            <span>source:</span> <a href="">GitHub</a>
+            <span>download:</span> <a href="">here</a>
+
+        </div>
+
+        <div style="clear:both;"></div>
         <div class="left">
             Original Image: <br/>
             <img src="images/image5.jpg" class="" />
         </div>
 
-
         <div class="left">
             Canvas Image: Vertical <br/>
             <img src="images/image5.jpg" class="canvasFlipVertical" />
-
         </div>
 
         <div class="left">
@@ -58,13 +85,23 @@
         </div>
 
         <div class="left">
-            CSS Image: Horizontal <br/>
-            <img src="images/image5.jpg" class="cssFlipHorizontal" />
+            CSS Image: Vertical & Horizontal  <br/>
+            <img src="images/image5.jpg" class="canvasFlipVerticalHorizontal" />
         </div>
 
         <div class="left">
             CSS Image: Vertical <br/>
             <img src="images/image5.jpg" class="cssFlipVertical" />
+        </div>
+
+        <div class="left">
+            CSS Image: Horizontal <br/>
+            <img src="images/image5.jpg" class="cssFlipHorizontal" />
+        </div>
+
+        <div class="left">
+            CSS Image: Vertical & Horizontal <br/>
+            <img src="images/image5.jpg" class="cssFlipVerticalHorizontal" />
         </div>
     </div>
 </body>
